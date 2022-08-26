@@ -7,7 +7,7 @@ class ExampleOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var state = Provider.of<ExampleOneProvider>(context,listen:false);
+    var state = Provider.of<ExampleOneProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(title: Text('counter app')),
       body: Center(
@@ -18,9 +18,7 @@ class ExampleOne extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {
-          state.setValue()
-        },
+        onPressed: () => {state.setValue()},
         child: Icon(Icons.add),
       ),
     );
