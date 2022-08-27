@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_example/provider/example_one_provider.dart';
+import 'provider/example_five_provider.dart';
 import 'provider/example_three_provider.dart';
 import 'provider/example_two_provider.dart';
+import 'screens/example_five.dart';
+import 'screens/example_four.dart';
 import 'screens/example_one.dart';
 import 'screens/example_three.dart';
 import 'screens/example_two.dart';
@@ -21,12 +24,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
         ChangeNotifierProvider(create: (_) => ExampleTwoProvider()),
         ChangeNotifierProvider(create: (_) => ExampleThreeProvider()),
+        ChangeNotifierProvider(create: (_) => UserAuthProvider()),
       ],
       child: Builder(builder: (context) {
         var state = Provider.of<ExampleThreeProvider>(context);
         return MaterialApp(
-          themeMode: state.get(),
-          home: ExampleThree(),
+          debugShowCheckedModeBanner: false,
+          themeMode: ThemeMode.system,
+          home: ExampleFive(),
           theme: ThemeData(
               brightness: Brightness.light,
               appBarTheme: AppBarTheme(color: Colors.teal)),
